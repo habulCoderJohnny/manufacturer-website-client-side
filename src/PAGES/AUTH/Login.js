@@ -38,13 +38,13 @@ const Login = () => {
                     </form>
                     <label className="label">
                         Lost Password?
-                        <button className="label-text-alt link link-hover link-white">Reset Pasword</button>
+                        <button className="label-text-alt link link-hover link-primary link-white font-bold">Reset Pasword</button>
                     </label>
                     <p><small>New to FishZone? <Link className=' hover:underline font-bold text-green-400' to="/signup">Create New Account</Link></small></p>
 
                     <div className="divider">OR</div>
 
-                    <button className="btn btn-outline">continue with google</button>
+                    <button className="btn bg-[#1a73e8] text-white">continue with google</button>
                 </div>
 
             </div>
