@@ -32,6 +32,7 @@ const SignUp = () => {
         await createUserWithEmailAndPassword(data.email, data.password);
         if ({sendEmailVerification:true}) {
             await toast('Sent email Verification mail check your inbox/spam!');
+            console.log(user);
         }
     }
     return (
@@ -122,7 +123,6 @@ const SignUp = () => {
 
                     <p><small>Already Have an Account? <Link className=' hover:underline font-bold text-primary' to="/login">Login</Link></small></p>
                     <SocialSignIn></SocialSignIn>
-
                 </div>
 
             </div>

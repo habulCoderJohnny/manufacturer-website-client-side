@@ -35,6 +35,7 @@ const Login = () => {
         console.log(data.email);
     }
 
+    console.log(user);
 
     return (
         <div className="hero min-h-screen" >

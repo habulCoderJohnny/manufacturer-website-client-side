@@ -13,6 +13,7 @@ const SocialSignIn = () => {
 
     if (gUser) {
         navigate('/')
+        console.log(gUser);
     }
     if (gError) {
         signInError = <ErrorMassage>{gError?.message}</ErrorMassage>

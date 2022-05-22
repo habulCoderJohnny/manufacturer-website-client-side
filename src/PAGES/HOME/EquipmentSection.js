@@ -14,7 +14,7 @@ const EquipmentSection = () => {
 
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
             {
-               equipments.map(equipment =><Equipment equipment={equipment} ></Equipment>)
+               equipments.map(equipment =><Equipment key={equipment._id} equipment={equipment} ></Equipment>)
             }
             </div>
             
