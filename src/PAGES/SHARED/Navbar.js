@@ -5,9 +5,9 @@ import logo from '../../assets/images/logo.png';
 const Navbar = () => {
     const menuItems = 
     <>
-     <li className='font-serif font-bold text-accent'>
+     <li className='font-serif font-bold'>
          <Link to="/">Home</Link>
-        <Link to="/#eqiptment">Product Eqiptment</Link>
+        <Link to="/#equipment">Product Equipment</Link>
         <Link to="/#review">Review</Link>
         <Link to="/about">Who we are</Link>
     </li> 
@@ -15,7 +15,7 @@ const Navbar = () => {
 
     return (
         <>
-            <div class="navbar sticky top-0 z-50 bg-secondary">
+            <div class="navbar sticky top-0 z-50">
                 <div class="flex-1">
              
                 <Link to='/about'><img src={logo} alt=""/></Link>

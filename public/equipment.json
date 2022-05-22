@@ -2,16 +2,16 @@
   {
   "name":"COLEMAN COMPANY SIGNATURE",
   "price":"120",
-  "min-quantity":"20", 
-  "available-quantity":"40",
+  "minQty":"20", 
+  "maxQty":"40",
   "description":"Huge hybrid cabin-style tent is a true home away from home. Integrated LED Lighted Fan System features a bright 5 LED light with high/low settings and a fan to cast a cool breeze or exhaust hot air.",
   "img":"https://i.ibb.co/vx7MSvF/e1.jpg"
   },
   {
   "name":"COMBINABLE HUNTING RIFLE AND BLADE",
   "price":"115",
-  "min-quantity":"50", 
-  "available-quantity":"100",
+  "minQty":"50", 
+  "maxQty":"100",
   "description":"AR-15 Build Kits. 16″ 5.56 Build Kit. $455.00 · Auto. Browning X-Bolt. $1,181.09 · arms. SAKO .270 WIN. – 156GR.",
   "img":"https://i.ibb.co/DLv3VPd/e2.jpg"
   },
@@ -19,48 +19,48 @@
   {
   "name":"BUSHNELL NIGHT VISION_EQUINOX Z2 MONOCULAR",
   "price":"110",
-  "min-quantity":"30", 
-  "available-quantity":"60",
+  "minQty":"30", 
+  "maxQty":"60",
   "description":"The Bushnell® Equinox Z2 night vision monocular enables you to see targets more than 1,000 ft away day or night with a power built-in IR illuminator.",
   "img":"https://i.ibb.co/6XPFKt7/e3.jpg"
   },
   {
   "name":"BUSHNELL NIGHT VISION_EQUINOX Z2 MONOCULAR",
   "price":"110",
-  "min-quantity":"30", 
-  "available-quantity":"60",
+  "minQty":"30", 
+  "maxQty":"60",
   "description":"The Bushnell® Equinox Z2 night vision monocular enables you to see targets more than 1,000 ft away day or night with a power built-in IR illuminator.",
   "img":"https://i.ibb.co/6XPFKt7/e4.jpg"
   },
   {
   "name":"Black Red Casting Spinning Reel",
   "price":"105",
-  "min-quantity":"40", 
-  "available-quantity":"80",
+  "minQty":"40", 
+  "maxQty":"80",
   "description":"Fish Rod Closed Size : 17.3 inch x 1.2 inch ;Fish Rod Extended Length : 6.56 Ft;Fishing Spinning Reel Model No. : CK-200 Dimension (When Folded) : 10 x 8 x 10 cm / 3.9 inch x 3.1 inch x 3.9 inch (L*W*H);Main Color : Red, Black, Silver Tone, Orange Weight : 299g;Package Content : 1 x Fishing Rod, 1 x Fishing Spinning Reel",
   "img":"https://i.ibb.co/5rSKRvZ/e5.jpg"
   },
   {
   "name":"Piscifun Aluminum Fishing Pliers Braid Cutters",
   "price":"140",
-  "min-quantity":"50", 
-  "available-quantity":"80",
+  "minQty":"50", 
+  "maxQty":"80",
   "description":"100 Foot 550 Cord Hanks Type III 550 pound 7-Strand core Commercial Paracord. Diameter is approximately 1/8",
   "img":"https://i.ibb.co/231dzct/e6.jpg"
   },
   {
   "name":"Freshwater and Saltwater Spinning Reel",
   "price":"140",
-  "min-quantity":"50", 
-  "available-quantity":"80",
+  "minQty":"50", 
+  "maxQty":"80",
   "description":"The entire fishing reel is coated with our saltwater treatment to prevent corrosion and ensure reel longevity. Of course, this reel for saltwater is also suitable for freshwater.",
   "img":"https://i.ibb.co/fpGhcKP/e7.jpg"
   },
   {
   "name":"STRIKE KING RED EYED SHAD CRANKBAIT",
   "price":"140",
-  "min-quantity":"50", 
-  "available-quantity":"80",
+  "minQty":"50", 
+  "maxQty":"80",
   "description":"Designed by our National Pro-Staff, the Red Eyed Shad has incredible action and features some awesome paint jobs, premium hooks, 3D eyes and free floating ...",
   "img":"https://i.ibb.co/pj2zgQk/e8.jpg"
   }

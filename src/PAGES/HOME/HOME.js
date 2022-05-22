@@ -1,9 +1,16 @@
 import React from 'react';
+import Banner from './Banner';
+import BusinessSummary from './BusinessSummary';
+import EquipmentSection from './EquipmentSection';
+import Review from './Review';
 
 const HOME = () => {
     return (
         <div>
-          <h1 className="text-2xl">Mars is my home!</h1>
+          <Banner></Banner>
+          <BusinessSummary></BusinessSummary>
+          <Review></Review>
+          <EquipmentSection></EquipmentSection>
         </div>
     );
 };

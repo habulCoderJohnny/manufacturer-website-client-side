@@ -1,3 +1,4 @@
+import { Route, Routes } from "react-router-dom";
 import HOME from "./PAGES/HOME/HOME";
 import Navbar from "./PAGES/SHARED/Navbar";
 
@@ -6,7 +7,10 @@ function App() {
 
     <div>
       <Navbar></Navbar>
-      <HOME></HOME>
+      <Routes>
+        <Route path="/" element={<HOME/>}></Route>
+      
+      </Routes>
     </div>
   );
 }
