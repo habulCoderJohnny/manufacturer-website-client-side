@@ -5,7 +5,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import logo from '../../assets/images/logo.png';
 import auth from '../../firebase.init';
 import Loading from '../SHARED/Loading/Loading';
-import ErrorMassages from '../SHARED/Loading/ErrorMassages';
+import ErrorMassages from '../SHARED/ErrorMassages';
+import SocialSignIn from './SocialSignIn';
 
 const Login = () => {
     const { register, formState: { errors }, handleSubmit} = useForm();
@@ -97,7 +98,7 @@ const Login = () => {
 
                         <div className="form-control">
                             <input type="submit" value="Login" className="btn btn-primary text-white
-                            mt-6 input-error" />
+                            mt-2 input-error" />
                         </div>
                     </form>
                     <label className="label">
@@ -106,9 +107,7 @@ const Login = () => {
                     </label>
                     <p><small>New to FishZone? <Link className=' hover:underline font-bold text-green-400' to="/signup">Create New Account</Link></small></p>
 
-                    <div className="divider">OR</div>
-
-                    <button className="btn bg-[#1a73e8] text-white">continue with google</button>
+                  <SocialSignIn></SocialSignIn>
                 </div>
 
             </div>

@@ -5,8 +5,9 @@ import auth from '../../firebase.init';
 import { useCreateUserWithEmailAndPassword} from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
-import ErrorMassage from '../SHARED/Loading/ErrorMassage';
+import ErrorMassage from '../SHARED/ErrorMassage';
 import Loading from '../SHARED/Loading/Loading';
+import SocialSignIn from './SocialSignIn';
 
 const SignUp = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
@@ -45,7 +46,7 @@ const SignUp = () => {
 
 
                     <div className="form-control">
-                            <label className="label p-0">
+                            <label className="label">
                                 <span className="label-text text-xl">Name</span>
                             </label>
 
@@ -115,15 +116,13 @@ const SignUp = () => {
 
                         <div className="form-control">
                             <input type="submit" value="Registration Now" className="btn bg-[#00a400]  text-white font-bold
-                        mt-6" />
+                        mt-1" />
                         </div>
                     </form>
 
                     <p><small>Already Have an Account? <Link className=' hover:underline font-bold text-primary' to="/login">Login</Link></small></p>
+                    <SocialSignIn></SocialSignIn>
 
-                    <div className="divider">OR</div>
-
-                    <button className="btn btn-outline">continue with google</button>
                 </div>
 
             </div>
