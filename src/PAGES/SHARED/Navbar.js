@@ -15,7 +15,7 @@ const Navbar = () => {
 
     return (
         <>
-            <div class="navbar sticky top-0 z-50">
+            <div class="navbar sticky top-0 z-50 bg-[#f2f2f2]">
                 <div class="flex-1">
              
                 <Link to='/about'><img src={logo} alt=""/></Link>
@@ -56,6 +56,7 @@ const Navbar = () => {
                                 </a>
                             </li>
                             <li><a>Dashboard</a></li>
+                            <li><Link to="/login">Login</Link></li>
                             <li><a>Logout</a></li>
                         </ul>
                     </div>

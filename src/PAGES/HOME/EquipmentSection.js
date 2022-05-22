@@ -4,7 +4,7 @@ import Equipment from './Equipment';
 const EquipmentSection = () => {
     const [equipments,setEquipment] = useState([]);
     useEffect(()=>{
-        fetch('equipment.json')
+        fetch('http://localhost:5000/equitment')
         .then(res=>res.json())
         .then(data=>setEquipment(data))
     },[]);
