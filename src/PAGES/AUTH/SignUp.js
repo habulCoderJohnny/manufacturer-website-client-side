@@ -5,6 +5,9 @@ import auth from '../../firebase.init';
 import { useCreateUserWithEmailAndPassword} from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
+import ErrorMassage from '../SHARED/Loading/ErrorMassage';
+import Loading from '../SHARED/Loading/Loading';
+
 const SignUp = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
     const [
@@ -14,9 +17,14 @@ const SignUp = () => {
         error,
     ] = useCreateUserWithEmailAndPassword(auth,  {sendEmailVerification: true});
     const navigate = useNavigate()
+    let signInError;
 
     if (user) {
         navigate('/')
+    }
+
+    if (error) {
+        signInError = <ErrorMassage>{error?.message}</ErrorMassage>
     }
 
     const onSubmit = async data => {
@@ -101,6 +109,10 @@ const SignUp = () => {
                             </label>
                         </div>
                          {/* Password field End  */}
+                         {/* Error & Loading */}
+                         {signInError}
+                        {loading && <Loading></Loading>}
+
                         <div className="form-control">
                             <input type="submit" value="Registration Now" className="btn bg-[#00a400]  text-white font-bold
                         mt-6" />
