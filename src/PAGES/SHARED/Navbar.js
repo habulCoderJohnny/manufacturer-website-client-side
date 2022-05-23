@@ -62,7 +62,7 @@ const Navbar = () => {
                             <li>
                           <Link to="/profile" className="justify-between text-purple-500 font-bold uppercase">
                               {user?.displayName} 
-                                <span className="badge bg-primary">View</span>
+                                <span className="badge">View</span>
                                 </Link>
                     
                             </li>

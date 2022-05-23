@@ -28,7 +28,7 @@ const Login = () => {
         signInError = <ErrorMassages>{error?.message}</ErrorMassages>
     }
 
-
+    
     const onSubmit = data => {
         console.log(data);
         signInWithEmailAndPassword(data.email, data.password);
