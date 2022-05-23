@@ -15,7 +15,7 @@ const Equipment = ({equipment}) => {
         <div className="card-body items-center text-center">
           <h2 className="card-title">{name}</h2>
           <div className='text-2xl'>
-              <p>Price: ${price}</p>
+              <p className='text-secondary'>Price: ${price}</p>
               <p>Min Qty. {minQty}</p>
               <p>Available Qty. {maxQty}</p>
           </div>
