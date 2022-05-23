@@ -1,13 +1,22 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import logo from '../../assets/images/logo.png';
 import auth from '../../firebase.init';
 import profile from '../../assets/images/profile.png';
+import { signOut } from 'firebase/auth';
 
 const Navbar = () => {
-
     const [user,loading] = useAuthState(auth);
+    const navigate = useNavigate();
+    const logout = () => {
+        const confirm = window.confirm('Are you sure to logout?');
+        if (confirm) {
+        signOut(auth);
+        navigate('/login')
+      };
+
+    }
     const menuItems =
         <>
             <li className='font-serif font-bold'>
@@ -69,7 +78,7 @@ const Navbar = () => {
                             {
                                 user && <li><Link to="/dashboard">Dashboard</Link></li>
                             }
-                            <li>{user ? <button className="btn btn-ghost">Logout</button> :
+                            <li>{user ? <button onClick={logout} className="btn btn-ghost">Logout</button> :
                                 <Link to="/login">Login</Link>}</li>
 
                         </ul>
