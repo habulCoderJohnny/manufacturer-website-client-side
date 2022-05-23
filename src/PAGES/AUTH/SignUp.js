@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import logo from '../../assets/images/logo.png';
 import auth from '../../firebase.init';
-import { useCreateUserWithEmailAndPassword} from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useUpdateProfile} from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import ErrorMassage from '../SHARED/ErrorMassage';
@@ -17,6 +17,8 @@ const SignUp = () => {
         loading,
         error,
     ] = useCreateUserWithEmailAndPassword(auth,  {sendEmailVerification: true});
+
+    const [updateProfile, updating, updateError] = useUpdateProfile(auth);
     const navigate = useNavigate()
     let signInError;
 
@@ -30,9 +32,10 @@ const SignUp = () => {
 
     const onSubmit = async data => {
         await createUserWithEmailAndPassword(data.email, data.password);
+        await updateProfile({ displayName: data.name });
+        console.log('user updated', user);
         if ({sendEmailVerification:true}) {
             await toast('Sent email Verification mail check your inbox/spam!');
-            console.log(user);
         }
     }
     return (

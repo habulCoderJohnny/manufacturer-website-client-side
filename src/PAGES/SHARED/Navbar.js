@@ -3,9 +3,11 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/images/logo.png';
 import auth from '../../firebase.init';
+import profile from '../../assets/images/profile.png';
 
 const Navbar = () => {
-    const [user] = useAuthState(auth);
+
+    const [user,loading] = useAuthState(auth);
     const menuItems =
         <>
             <li className='font-serif font-bold'>
@@ -15,7 +17,7 @@ const Navbar = () => {
                 <Link to="/about">Who we are</Link>
             </li>
         </>
-
+    
     return (
         <>
             <div className="navbar sticky top-0 z-50 bg-[#f2f2f2]">
@@ -45,18 +47,24 @@ const Navbar = () => {
                     <div className="form-control">
                         <input type="text" placeholder="Search" className="input input-bordered" />
                     </div>
+
                     <div className="dropdown dropdown-end">
                         <label tabIndex="0" className="btn btn-ghost btn-circle avatar">
-                            <div className="w-10 rounded-full">
-                                <img src={user?.photoURL} alt=""/>
+                       {  user?.photoURL? <div className="w-10 rounded-full">
+                                <img src={user?.photoURL} alt="" />
+                                </div>
+                              :<div className="w-10 rounded-full">
+                                <img src={profile} alt="" />
                             </div>
+                            }
                         </label>
                         <ul tabIndex="0" className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
                             <li>
-                                <a className="justify-between">
-                                    {user?.displayName}Profile
-                                    <span className="badge">New</span>
-                                </a>
+                          <Link to="/profile" className="justify-between text-purple-500 font-bold uppercase">
+                              {user?.displayName} 
+                                <span className="badge bg-primary">View</span>
+                                </Link>
+                    
                             </li>
                             {
                                 user && <li><Link to="/dashboard">Dashboard</Link></li>
