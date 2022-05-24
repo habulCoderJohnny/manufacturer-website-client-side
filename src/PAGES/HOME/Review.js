@@ -13,7 +13,7 @@ const Review = () => {
         <section className='my-28' id='review'>
             <div className='flex justify-between'>
                 <div>
-                 <h2 className="text-4xl underline decoration-3 decoration-primary">What Our Patients Says</h2>
+                 <h2 className="text-4xl underline decoration-3 decoration-primary">What Our Client Says</h2>
                 </div>
                 <div>
                     <img src='https://png.pngitem.com/pimgs/s/504-5044190_get-quote-filled-icon-quote-commas-png-transparent.png' className="w-24 lg:w-[192px]" alt="quote"/>

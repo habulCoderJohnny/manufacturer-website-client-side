@@ -10,7 +10,8 @@ const EquipmentSection = () => {
     },[]);
     return (
         <section>
-            <h1 className='text-center stat-value text-primary'>Popular Equipment {equipments.length}</h1>
+               <button class="btn gap-2 ml-52 mb-2">
+            <h1 className='text-center stat-value text-secondary'>Popular Equipment <div class="badge badge-primary text-2xl">{equipments.length}</div></h1></button>
 
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
             {

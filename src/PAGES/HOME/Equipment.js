@@ -20,7 +20,7 @@ const Equipment = ({equipment}) => {
               <p>Available Qty. {maxQty}</p>
           </div>
           <div className="card-actions">
-          <button onClick={()=>navigateToOrderDetail(_id)} className="btn btn-primary mb-2">Order now</button>
+          <button onClick={()=>navigateToOrderDetail(_id)} className="btn btn-secondary mb-2">Order now</button>
           </div>
         </div>
       </div>
