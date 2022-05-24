@@ -25,11 +25,11 @@ const Navbar = () => {
                 <Link to="/#review">Review</Link>
                 <Link to="/about">Who we are</Link>
             </li>
-        </>
+        </> //color#202447
     
     return (
         <>
-            <div className="navbar sticky top-0 z-50 bg-[#f2f2f2]">
+            <div className="navbar sticky top-0 z-50 bg-[#e9e9e9]"> 
                 <div className="flex-1">
 
                     <Link to='/about'><img src={logo} alt="" /></Link>

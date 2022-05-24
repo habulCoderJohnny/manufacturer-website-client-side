@@ -65,8 +65,8 @@ const MyOrder = () => {
       <div className="overflow-x-auto w-full">
         <table className="table mx-auto">
           {/* <!-- head --> */}
-          <thead className='text-primary'>
-            <tr>
+          <thead>
+            <tr className='text-secondary'>
               <th></th>
               <th>Avator</th>
               <th>Equipment Name</th>

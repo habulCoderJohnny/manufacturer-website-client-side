@@ -25,5 +25,6 @@ yarn-error.log*
 tailwind.config.js
 firebase.init.js
 .firebaserc
+.firebase
 .firebase/hosting.YnVpbGQ.cache
 firebase.json

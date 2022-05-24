@@ -72,7 +72,7 @@ const Purchase = () => {
                 </div>
             </div>
 
-            <form onSubmit={handleBooking} className='grid grid-cols-1 gap-4 justify-items-center my-5'>
+            <form onSubmit={handleBooking} className='grid grid-cols-1 gap-4 justify-items-center my-5 text-secondary'>
                 <h1 className='stat-value'>Order information</h1>
                 <input value={user?.displayName || ''}
                     disabled type="text" name='name' className="input input-bordered w-full max-w-xs" />
