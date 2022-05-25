@@ -28,3 +28,4 @@ firebase.init.js
 .firebase
 .firebase/hosting.YnVpbGQ.cache
 firebase.json
+.vscode
