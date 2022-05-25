@@ -8,6 +8,7 @@ import { toast } from 'react-toastify';
 import ErrorMassage from '../SHARED/ErrorMassage';
 import Loading from '../SHARED/Loading/Loading';
 import SocialSignIn from './SocialSignIn';
+import useToken from '../../Hooks/useToken';
 
 const SignUp = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
@@ -20,9 +21,10 @@ const SignUp = () => {
 
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
     const navigate = useNavigate()
+    const [token] = useToken(user);
     let signInError;
 
-    if (user) {
+    if (token) {
         navigate('/')
     }
 

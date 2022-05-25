@@ -3,12 +3,14 @@ import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 
 import auth from '../../firebase.init';
+import useToken from '../../Hooks/useToken';
 import ErrorMassage from '../SHARED/ErrorMassage';
 import Loading from '../SHARED/Loading/Loading';
 
 const SocialSignIn = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const navigate = useNavigate();
+    const [token] = useToken(gUser);
     let signInError;
 
     if (gUser) {
