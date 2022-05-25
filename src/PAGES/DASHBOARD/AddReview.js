@@ -46,7 +46,7 @@ const AddReview = () => {
         <div>
           
             <form onSubmit={handleBooking} className='grid grid-cols-1 gap-4 justify-items-center my-5 text-secondary'>
-            <h1 className='stat-value'>Plz Give your valuable review!</h1>
+            <h1 className='text-2xl lg:stat-value'>Plz Give your valuable review!</h1>
             <div className="form-control">
               <textarea type="text" name='body' required  className="textarea textarea-primary " placeholder="Please tell about us"></textarea>
               <Rating></Rating>

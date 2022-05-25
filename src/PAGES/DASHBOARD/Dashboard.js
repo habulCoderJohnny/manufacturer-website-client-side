@@ -3,10 +3,12 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, Outlet } from 'react-router-dom';
 import auth from '../../firebase.init';
 import profile from '../../assets/images/profile.png';
+import useAdmin from '../../Hooks/useAdmin';
 
 
 const Dashboard = () => {
     const [user] = useAuthState(auth);
+    const [admin] = useAdmin(user);
 
     return (
         <div className="drawer">
@@ -21,9 +23,9 @@ const Dashboard = () => {
             </div>
             <div className="drawer-side">
                 <label for="my-drawer" className="drawer-overlay"></label>
-                <ul className="menu p-3 overflow-y-auto w-80 bg-secondary  text-white text-xl">
+                <ul className="menu p-3 overflow-y-auto w-80 bg-secondary  text-white text-xl font-serif">
 
-                <label tabIndex="0" className="avatar ">
+                <label tabIndex="0" className="avatar ml-4">
                        {  user?.photoURL? <div className="w-32  mask mask-squircle">
                                 <img src={user?.photoURL} alt="" />
                                 </div>
@@ -33,14 +35,16 @@ const Dashboard = () => {
                             }
                         </label>
                 <li><Link to="/dashboard/profile">My Profile</Link></li>
-          
+                   {!admin && <>
                     <li><Link to="/dashboard">My Order</Link></li>
-                    <li><Link to="/dashboard/review">My Review</Link></li>
+                    <li><Link to="/dashboard/review">My Review</Link></li></>}
+                    
+                    {admin && <>
                     <li><Link to="/dashboard/users">Make an Admin</Link></li>
                     <li><Link to="/dashboard/add-doctor">Add a Product</Link></li>
                     <li><Link to="/dashboard/users">Manage All Orders</Link></li>
                     <li><Link to="/dashboard/manage-doctor">Manage Products</Link></li>
-                
+                    </>}
                 </ul>
             </div>
         </div>
