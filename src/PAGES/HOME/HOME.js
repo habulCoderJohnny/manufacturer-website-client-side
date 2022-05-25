@@ -5,6 +5,7 @@ import ContactForm from './ContactForm';
 import EquipmentSection from './EquipmentSection';
 import Footer from './Footer';
 import Review from './Review';
+import AutoPlayCarousel from './AutoPlayCarousel';
 
 const HOME = () => {
     return (
@@ -13,9 +14,9 @@ const HOME = () => {
           <BusinessSummary></BusinessSummary>
           <EquipmentSection></EquipmentSection>
           <Review></Review>
+          <AutoPlayCarousel></AutoPlayCarousel>
           <ContactForm></ContactForm>
           <Footer></Footer>
-
         </div>
     );
 };

@@ -1,0 +1,14 @@
+
+
+.slide-container img {
+    width: 400px;
+    height: 360px;
+}
+
+@media (max-width: 62em) {
+    .slide-container img {
+        width: 200px;
+        height: 200px;
+        margin-right: 500px;
+    }
+}
