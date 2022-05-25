@@ -3,7 +3,7 @@ import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import Login from "./PAGES/AUTH/Login";
 import RequireAuth from "./PAGES/AUTH/RequireAuth";
-import MyProfile from "./PAGES/AUTH/MyProfile";
+import MyProfile from "./PAGES/DASHBOARD/MyProfile";
 import SignUp from "./PAGES/AUTH/SignUp";
 import Dashboard from "./PAGES/DASHBOARD/Dashboard";
 import HOME from "./PAGES/HOME/HOME";
@@ -22,20 +22,20 @@ function App() {
       <Navbar></Navbar>
       <Routes>
         <Route path="/" element={<HOME />}></Route>
-        <Route path="/order/:orderId" element={<Purchase />}></Route>
+        <Route path="/order/:orderId" element={<RequireAuth><Purchase /></RequireAuth>}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/signup" element={<SignUp />}></Route>
         <Route path="/profile" element={<MyProfile />}></Route>
         <Route path="*" element={<NotFoundPage/>}></Route>
                  {/* Nested Route */}
         <Route path="/dashboard" element={<Dashboard />}>
-        <Route index element={<MyOrder/>}></Route>
-        <Route path="review" element={<AddReview />}></Route>
-        <Route path="profile" element={<MyProfile />}></Route>
+        <Route index element={<MyProfile />}></Route>
+        <Route path="order" element={<RequireAuth><MyOrder/></RequireAuth>}></Route>
+        <Route path="review" element={<RequireAuth><AddReview /></RequireAuth>}></Route>
         <Route path="users" element={<RequireAdmin><MakeAdmin/></RequireAdmin>}></Route>
          </Route>
       </Routes>
-      <ToastContainer></ToastContainer>
+      <ToastContainer></ToastContainer> 
     </div>
   );
 }

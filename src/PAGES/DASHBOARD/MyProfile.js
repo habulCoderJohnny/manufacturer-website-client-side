@@ -13,7 +13,7 @@ const MyProfile = () => {
             <div class="min-h-screen">
                 <div class="hero-content flex-col lg:flex-row">
                 {
-                        user.photoURL ? <img src={user.photoURL} className="w-24 mx-auto mask mask-hexagon
+                        user?.photoURL ? <img src={user?.photoURL} className="w-24 mx-auto mask mask-hexagon
                         shadow-2xl" alt="" srcset="" /> :
                      <img src={img} className="w-24 mx-auto mask mask-hexagon" alt="" srcset="" />
                     }
@@ -34,7 +34,7 @@ const MyProfile = () => {
                 <div className="modal-box">
                     <label htmlFor="profile-modal" className="btn bg-[#0c55b6] btn-sm btn-circle absolute right-8 top-5">✕</label>
                     {
-                        user.photoURL ? <img src={user.photoURL} className="w-24 mx-auto mask mask-hexagon
+                        user?.photoURL ? <img src={user?.photoURL} className="w-24 mx-auto mask mask-hexagon
                         shadow-2xl" alt="" srcset="" /> :
                      <img src={img} className="w-24 mx-auto mask mask-hexagon" alt="" srcset="" />
                     }
@@ -45,8 +45,8 @@ const MyProfile = () => {
                     <input defaultValue={user?.displayName || '' }
                       type="text" name='name' className="input input-bordered w-full max-w-xs" />
                         <input defaultValue={user?.email || ''}  type="email" name='email' className="input input-bordered w-full max-w-xs" />
+                        <input type="text" name='phone' required  placeholder="your Phone number" className="input input-bordered w-full max-w-xs" />
                         <input type="text" name='phone' required  placeholder="Education Level" className="input input-bordered w-full max-w-xs" />
-                        <input type="text" name='phone' required  placeholder="College name" className="input input-bordered w-full max-w-xs" />
                         <select name='skill' className="select select-accent w-full max-w-xs" required>
                         <option selected disabled>Skillset</option>
                             <option>Web developer</option>

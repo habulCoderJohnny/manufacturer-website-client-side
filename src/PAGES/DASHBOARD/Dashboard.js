@@ -22,7 +22,7 @@ const Dashboard = () => {
                 <Outlet></Outlet>
             </div>
             <div className="drawer-side">
-                <label for="my-drawer" className="drawer-overlay"></label>
+                <label htmlFor="my-drawer" className="drawer-overlay"></label>
                 <ul className="menu p-3 overflow-y-auto w-80 bg-secondary  text-white text-xl font-serif">
 
                 <label tabIndex="0" className="avatar ml-4">
@@ -34,9 +34,9 @@ const Dashboard = () => {
                             </div>
                             }
                         </label>
-                <li><Link to="/dashboard/profile">My Profile</Link></li>
+                <li><Link to="/dashboard">My Profile</Link></li>
                    {!admin && <>
-                    <li><Link to="/dashboard">My Order</Link></li>
+                    <li><Link to="/dashboard/order">My Order</Link></li>
                     <li><Link to="/dashboard/review">My Review</Link></li></>}
                     
                     {admin && <>

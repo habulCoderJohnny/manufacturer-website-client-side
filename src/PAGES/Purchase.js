@@ -1,6 +1,6 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { Link, useParams } from 'react-router-dom';
+import { Link, Navigate, useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../firebase.init';
 import useOrderDetail from '../Hooks/useOrderDetail';
@@ -12,6 +12,7 @@ const Purchase = () => {
     const [order] = useOrderDetail(orderId);
     const [user, loading] = useAuthState(auth);
     ;
+    const navigate = useNavigate();
 
     const handleBooking = event => {
         event.preventDefault();
@@ -44,6 +45,7 @@ const Purchase = () => {
                 //conditional displayed server:line:35
                 if (data.success) {
                     toast.success('Congrats! Order Add to card!')
+                    navigate('/dashboard');
                 }
                 else {
                     toast.error('today this equipment not available try tomorrow!')

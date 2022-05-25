@@ -22,9 +22,9 @@ const Navbar = () => {
         <>
             <li className='font-serif font-bold'>
                 <Link to="/">Home</Link>
-                <Link to="/#product">Product Equipment</Link>
-                <Link to="/#review">Review</Link>
-                <Link to="/">Who we are</Link>
+                <a href="/#product">Product Equipment</a>
+                <a href="/#review">Reviews</a>
+                <a href="/#cform">Who we are</a>
             </li>
         </> //color#202447
     

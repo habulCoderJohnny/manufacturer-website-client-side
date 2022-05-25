@@ -2,7 +2,7 @@ import React from 'react';
 // import appointment from '../../assets/images/appointment.png';
 const ContactForm = () => {
     return (
-        <div className="my-16 p-10 " style={{background: `url("https://mosaiccounselling.co.uk/wp-content/uploads/2021/08/contact-powershop-stoddart-1024x478-1.jpg")`, backgroundSize:'cover'}} id="who-we-are">
+        <div className="my-16 p-10" id='cform' style={{background: `url("https://mosaiccounselling.co.uk/wp-content/uploads/2021/08/contact-powershop-stoddart-1024x478-1.jpg")`, backgroundSize:'cover'}}>
           <div className="hero-overlay bg-opacity-50"></div>
           <div className='text-center text-primary font-bold mb-7'>
           <h4 className='text-xl'>Contact Us</h4>
