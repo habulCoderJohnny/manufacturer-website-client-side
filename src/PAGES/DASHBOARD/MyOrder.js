@@ -1,9 +1,10 @@
 import { faTrashAlt } from '@fortawesome/free-regular-svg-icons';
-import { faCheckCircle, faDeleteLeft } from '@fortawesome/free-solid-svg-icons';
+import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate} from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 import Loading from '../SHARED/Loading/Loading';
@@ -12,19 +13,30 @@ import Loading from '../SHARED/Loading/Loading';
 const MyOrder = () => {
   const [orders, setOrders] = useState([]);
   const [user, loading] = useAuthState(auth);
+  const navigate = useNavigate();
   useEffect(() => {
     //SEND USER MAIL & localStorage accessToken for secure UserData TO SERVER || Token parameter sent 
     if (user) {
-      fetch(`http://localhost:5000/order?email=${user?.email}`, {
+      fetch(`http://localhost:5000/order?customerMail=${user?.email}`, {
         method: 'GET',
         headers: {
           'content-type': 'application/json',
+          'authorization': `Bearer ${localStorage.getItem('accessToken')}`
         }
       })
-        .then(res => res.json())
+        //Handle unauthorized access || Showing Error
+        .then(res => {
+          console.log('res:', res);
+          if (res.status === 401 || res.status === 403) {
+            signOut(auth);
+            localStorage.removeItem('accessToken');
+            navigate('/login')
+          }
+
+          return res.json()
+        })
         .then(data => {
           setOrders(data);
-          //console.log(data);
         })
     }
   }, [user]);
@@ -35,8 +47,6 @@ const MyOrder = () => {
 
 
   //DELETE OPERATION
-
-
   const handleDelete = email => {
     const confirm = window.confirm('Are you sure to Delete this parts?');
     if (confirm) {
@@ -61,11 +71,10 @@ const MyOrder = () => {
 
   return (
     <div>
-    
       <div className="overflow-x-auto w-full">
-      <button class="btn gap-2 ml-52 mb-2 text-red-500">
+      <button className="btn gap-2 ml-52 mb-2 text-red-500">
        My Order:
-        <div class="badge badge-secondary text-2xl">{orders.length}</div>
+        <div className="badge badge-secondary text-2xl">{orders.length}</div>
       </button>
         <table className="table mx-auto">
           {/* <!-- head --> */}
@@ -109,7 +118,7 @@ const MyOrder = () => {
                   <button className="btn btn-ghost btn-xs">{order.treatment}</button>
                   </th>  */}
                   <td>{(order.price && !order.paid) && <div><Link to={`/dashboard/payment/${order._id}`}>
-                    <button className="btn btn-warning btn-xs">Plz Pay</button></Link> <FontAwesomeIcon onClick={() => handleDelete(order?.email)} className='h-6 pl-2 text-orange-600' icon={faTrashAlt}></FontAwesomeIcon>
+                    <button className="btn btn-warning btn-xs">Plz Pay</button></Link> <FontAwesomeIcon onClick={() => handleDelete(order?.customerMail)} className='h-6 pl-2 text-orange-600' icon={faTrashAlt}></FontAwesomeIcon>
                   </div>
                   }
                     {(order.price && order.paid) &&

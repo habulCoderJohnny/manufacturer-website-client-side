@@ -7,6 +7,7 @@ import auth from '../../firebase.init';
 import Loading from '../SHARED/Loading/Loading';
 import ErrorMassages from '../SHARED/ErrorMassages';
 import SocialSignIn from './SocialSignIn';
+import useToken from '../../Hooks/useToken';
 
 const Login = () => {
     const { register, formState: { errors }, handleSubmit} = useForm();
@@ -19,8 +20,9 @@ const Login = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
+    const [token] = useToken(user);
 
-    if (user) {
+    if (token) {
         navigate('/')
     }
 

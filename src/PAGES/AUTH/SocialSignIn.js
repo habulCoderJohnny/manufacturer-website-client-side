@@ -13,7 +13,7 @@ const SocialSignIn = () => {
     const [token] = useToken(gUser);
     let signInError;
 
-    if (gUser) {
+    if (token) {
         navigate('/')
         console.log(gUser);
     }

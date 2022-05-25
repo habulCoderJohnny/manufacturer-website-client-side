@@ -11,6 +11,7 @@ import Purchase from "./PAGES/Purchase";
 import Navbar from "./PAGES/SHARED/Navbar";
 import MyOrder from "./PAGES/DASHBOARD/MyOrder";
 import AddReview from "./PAGES/DASHBOARD/AddReview";
+import MakeAdmin from "./PAGES/DASHBOARD/ADMIN/MakeAdmin";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route index element={<MyOrder/>}></Route>
         <Route path="review" element={<AddReview />}></Route>
         <Route path="profile" element={<MyProfile />}></Route>
+        <Route path="users" element={<MakeAdmin/>}></Route>
          </Route>
       </Routes>
       <ToastContainer></ToastContainer>

@@ -13,6 +13,7 @@ const Navbar = () => {
         const confirm = window.confirm('Are you sure to logout?');
         if (confirm) {
         signOut(auth);
+        localStorage.removeItem('accessToken');
         navigate('/login')
       };
 
