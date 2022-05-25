@@ -10,7 +10,7 @@ const Equipment = ({equipment}) => {
     return (
         <div className="card w-96  shadow-xl">
         <figure className="px-10 pt-10">
-          <img src={img} alt="Shoes" className="rounded-xl" />
+          <img src={img} alt="" className="rounded-xl transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-110" />
         </figure>
         <div className="card-body items-center text-center">
           <h2 className="card-title">{name}</h2>
@@ -20,7 +20,7 @@ const Equipment = ({equipment}) => {
               <p>Available Qty. {maxQty}</p>
           </div>
           <div className="card-actions">
-          <button onClick={()=>navigateToOrderDetail(_id)} className="btn btn-secondary mb-2">Order now</button>
+          <button onClick={()=>navigateToOrderDetail(_id)} className="btn btn-secondary mb-2 transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-110">Order now</button>
           </div>
         </div>
       </div>

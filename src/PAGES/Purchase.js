@@ -81,7 +81,7 @@ const Purchase = () => {
                 <input type="text" name='phone' required placeholder="Current Phone Number" className="input input-bordered w-full max-w-xs" />
                 <input type="text" name='address' required
                     placeholder="your present Address" className="input input-bordered w-full max-w-xs" />
-                <input type="submit" value="Order" className="btn btn-secondary " />
+                <input type="submit" value="Order" className="btn btn-secondary transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-110 " />
             </form>
         </div>
     );

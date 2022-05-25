@@ -9,9 +9,9 @@ const EquipmentSection = () => {
         .then(data=>setEquipment(data))
     },[]);
     return (
-        <section>
-               <button class="btn gap-2 ml-52 mb-2">
-            <h1 className='text-center stat-value text-secondary'>Popular Equipment <div class="badge badge-primary text-2xl">{equipments.length}</div></h1></button>
+        <section id='product'>
+               <button class="btn gap-2 ">
+            <h1 className='stat-value text-secondary'>Best Sellers <div class="badge badge-primary text-2xl">{equipments.length}</div></h1></button>
 
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
             {

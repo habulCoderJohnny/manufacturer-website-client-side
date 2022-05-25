@@ -1,5 +1,9 @@
 # Manufacturer Website
 ## Project name: Huntor Fishzone
+
+### Fishing Tools,   Accessories store
+### Tools & equipment store, hand tools
+
 Click here for the Server side repo: [https://github.com/programming-hero-web-course1/manufacturer-website-server-side-habulCoderJohnny](https://github.com/programming-hero-web-course1/manufacturer-website-server-side-habulCoderJohnny)
 
 Click here for the Live site: [https://huntor-fishzone.web.app/](https://huntor-fishzone.web.app/)

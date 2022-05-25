@@ -22,9 +22,9 @@ const Navbar = () => {
         <>
             <li className='font-serif font-bold'>
                 <Link to="/">Home</Link>
-                <Link to="/#equipment">Product Equipment</Link>
+                <Link to="/#product">Product Equipment</Link>
                 <Link to="/#review">Review</Link>
-                <Link to="/about">Who we are</Link>
+                <Link to="/">Who we are</Link>
             </li>
         </> //color#202447
     
@@ -33,7 +33,7 @@ const Navbar = () => {
             <div className="navbar sticky top-0 z-50 bg-[#e9e9e9]"> 
                 <div className="flex-1">
 
-                    <Link to='/about'><img src={logo} alt="" /></Link>
+                    <img src={logo} alt="" />
 
                     <div className="navbar-start">
                         <div className="dropdown">
