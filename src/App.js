@@ -13,6 +13,7 @@ import MyOrder from "./PAGES/DASHBOARD/MyOrder";
 import AddReview from "./PAGES/DASHBOARD/AddReview";
 import MakeAdmin from "./PAGES/DASHBOARD/ADMIN/MakeAdmin";
 import RequireAdmin from "./PAGES/AUTH/RequireAdmin";
+import NotFoundPage from "./PAGES/SHARED/NotFoundPage";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/login" element={<Login />}></Route>
         <Route path="/signup" element={<SignUp />}></Route>
         <Route path="/profile" element={<MyProfile />}></Route>
+        <Route path="*" element={<NotFoundPage/>}></Route>
                  {/* Nested Route */}
         <Route path="/dashboard" element={<Dashboard />}>
         <Route index element={<MyOrder/>}></Route>
