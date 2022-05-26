@@ -2,7 +2,7 @@ import React from 'react';
 import { toast } from 'react-toastify';
 
 const UserRow = ({user,refetch}) => {
-    const {email, role, displayName} = user;
+    const {email, role} = user;
     const makeAdmin = () =>{
         fetch(`http://localhost:5000/user/admin/${email}`,{
             method: 'PUT',
@@ -30,10 +30,9 @@ const UserRow = ({user,refetch}) => {
             <td>
                 {email}
                 <br />
-                <span className="badge badge-ghost badge-sm">{displayName}</span>
             </td>
             <td> {role!=='admin' && <button onClick={makeAdmin} className="btn bg-[#1369da] btn-sm text-white ">Make Admin</button>}
-            {role == 'admin' && <button className="badge badge-success badge-sm">Already Admin</button>} </td>
+            {role == 'admin' && <button className="badge badge-success text-white badge-sm">Already Admin</button>} </td>
              <td><button className="btn btn-error btn-xs">Remove user</button></td>
         </tr>
     );

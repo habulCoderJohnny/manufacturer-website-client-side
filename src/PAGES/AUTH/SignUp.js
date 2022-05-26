@@ -26,6 +26,7 @@ const SignUp = () => {
 
     if (token) {
         navigate('/')
+        toast.success('WELCOME TO FISHZOME');
     }
 
     if (error) {

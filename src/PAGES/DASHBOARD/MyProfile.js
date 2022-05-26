@@ -3,12 +3,15 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import Loading from '../SHARED/Loading/Loading';
 import img from '../../assets/images/profile.png';
+import useAdmin from '../../Hooks/useAdmin';
 
 const MyProfile = () => {
     const [user, loading] = useAuthState(auth);
+    const [admin, adminLoading] = useAdmin(user);
     return (
         <div className='grid grid-cols-1 gap-4 justify-items-center my-4'>
-            <h1 className='stat-value'>My Profile</h1>
+             { admin? <h1 className='stat-value text-blue-500'>Admin Profile</h1>:
+            <h1 className='stat-value text-purple-500'>User Profile</h1>}
             {loading && <Loading></Loading>}
             <div class="min-h-screen">
                 <div class="hero-content flex-col lg:flex-row">

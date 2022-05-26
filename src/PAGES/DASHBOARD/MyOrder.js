@@ -81,7 +81,7 @@ const MyOrder = () => {
           <thead>
             <tr className='text-secondary'>
               <th></th>
-              <th>Avator</th>
+              <th>Tools</th>
               <th>Equipment Name</th>
               <th>Price</th>
               <th>phone Number</th>

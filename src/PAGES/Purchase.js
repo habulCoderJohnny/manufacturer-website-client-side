@@ -45,7 +45,7 @@ const Purchase = () => {
                 //conditional displayed server:line:35
                 if (data.success) {
                     toast.success('Congrats! Order Add to card!')
-                    navigate('/dashboard');
+                    navigate('/dashboard/order');
                 }
                 else {
                     toast.error('today this equipment not available try tomorrow!')

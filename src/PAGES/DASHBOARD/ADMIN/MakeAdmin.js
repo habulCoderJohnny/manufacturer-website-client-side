@@ -27,7 +27,7 @@ const MakeAdmin = () => {
                     {/* <!-- head --> */}
                     <thead className='text-primary'>
                         <tr>
-                            <th>Name | Email</th>
+                            <th>Email</th>
                             <th>Admin Status</th>
                             <th>User Status</th>
                         </tr>

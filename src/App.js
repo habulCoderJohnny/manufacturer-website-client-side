@@ -14,6 +14,7 @@ import AddReview from "./PAGES/DASHBOARD/AddReview";
 import MakeAdmin from "./PAGES/DASHBOARD/ADMIN/MakeAdmin";
 import RequireAdmin from "./PAGES/AUTH/RequireAdmin";
 import NotFoundPage from "./PAGES/SHARED/NotFoundPage";
+import MyPortfolio from "./PAGES/MyPortfolio";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/login" element={<Login />}></Route>
         <Route path="/signup" element={<SignUp />}></Route>
         <Route path="/profile" element={<MyProfile />}></Route>
+        <Route path="/portfolio" element={<MyPortfolio />}></Route>
         <Route path="*" element={<NotFoundPage/>}></Route>
                  {/* Nested Route */}
         <Route path="/dashboard" element={<Dashboard />}>

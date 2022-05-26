@@ -8,6 +8,7 @@ import Loading from '../SHARED/Loading/Loading';
 import ErrorMassages from '../SHARED/ErrorMassages';
 import SocialSignIn from './SocialSignIn';
 import useToken from '../../Hooks/useToken';
+import { toast } from 'react-toastify';
 
 const Login = () => {
     const { register, formState: { errors }, handleSubmit} = useForm();
@@ -23,7 +24,8 @@ const Login = () => {
     const [token] = useToken(user);
 
     if (token) {
-        navigate('/')
+        navigate('/dashboard')
+        toast.success('You loggin successfully');
     }
 
     if (error) {

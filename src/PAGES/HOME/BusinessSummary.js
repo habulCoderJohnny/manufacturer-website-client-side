@@ -12,7 +12,7 @@ const BusinessSummary = () => {
                         <h1 class="text-5xl font-bold"><span class="font-mono text-6xl">
                             <span>30</span>
                         </span></h1>
-                        <p class="uppercase text-xl">Countries</p>
+                        <p class="uppercase text-xl">Connect Countries</p>
                     </div>
                 </div>
             </div>

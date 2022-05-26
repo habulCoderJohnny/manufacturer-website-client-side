@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 import auth from '../../firebase.init';
 import useToken from '../../Hooks/useToken';
@@ -15,6 +16,7 @@ const SocialSignIn = () => {
 
     if (token) {
         navigate('/')
+        toast.success('You loggin with google');
         console.log(gUser);
     }
     if (gError) {
