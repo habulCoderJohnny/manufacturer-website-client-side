@@ -15,6 +15,7 @@ import MakeAdmin from "./PAGES/DASHBOARD/ADMIN/MakeAdmin";
 import RequireAdmin from "./PAGES/AUTH/RequireAdmin";
 import NotFoundPage from "./PAGES/SHARED/NotFoundPage";
 import MyPortfolio from "./PAGES/MyPortfolio";
+import AddProduct from "./PAGES/DASHBOARD/ADMIN/AddProduct";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
         <Route path="order" element={<RequireAuth><MyOrder/></RequireAuth>}></Route>
         <Route path="review" element={<RequireAuth><AddReview /></RequireAuth>}></Route>
         <Route path="users" element={<RequireAdmin><MakeAdmin/></RequireAdmin>}></Route>
+        <Route path="add-product" element={<RequireAdmin><AddProduct/></RequireAdmin>}></Route>
          </Route>
       </Routes>
       <ToastContainer></ToastContainer> 

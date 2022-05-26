@@ -45,13 +45,15 @@ const MyOrder = () => {
     return <Loading></Loading>
   }
 
-
   //DELETE OPERATION
-  const handleDelete = email => {
+  const handleDelete = (email) => {
     const confirm = window.confirm('Are you sure to Delete this parts?');
     if (confirm) {
-      fetch(`http://localhost:5000/parts/${email}`, {
-        method: 'DELETE'
+      fetch(`http://localhost:5000/order/${email}`, {
+        method: 'DELETE',
+        headers: {
+          authorization: `Bearer ${localStorage.getItem('accessToken')}`
+          }
       })
         .then(res => res.json())
         .then(data => {
@@ -67,7 +69,6 @@ const MyOrder = () => {
 
     };
   }
-
 
   return (
     <div>
@@ -109,16 +110,16 @@ const MyOrder = () => {
                     <div>
                       <div className="font-bold">{order.name}</div>
                     </div>
+                    <th>
+                  <button className="btn btn-xs">Quantity: {order.quantity}</button>
+                  </th> 
                   </td>
                   <td>
                     ${order.price}
                   </td>
                   <td>{order.phone}</td>
-                  {/* <th>
-                  <button className="btn btn-ghost btn-xs">{order.treatment}</button>
-                  </th>  */}
                   <td>{(order.price && !order.paid) && <div><Link to={`/dashboard/payment/${order._id}`}>
-                    <button className="btn btn-warning btn-xs">Plz Pay</button></Link> <FontAwesomeIcon onClick={() => handleDelete(order?.customerMail)} className='h-6 pl-2 text-orange-600' icon={faTrashAlt}></FontAwesomeIcon>
+                    <button className="btn btn-warning btn-xs">Plz Pay</button></Link> <FontAwesomeIcon onClick={() => handleDelete(order.customerMail)} className='h-6 pl-2 text-orange-600' icon={faTrashAlt}></FontAwesomeIcon>
                   </div>
                   }
                     {(order.price && order.paid) &&
