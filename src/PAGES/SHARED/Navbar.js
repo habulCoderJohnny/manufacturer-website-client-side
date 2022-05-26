@@ -25,6 +25,7 @@ const Navbar = () => {
                 <a href="/#product">Product Equipment</a>
                 <a href="/#review">Reviews</a>
                 <a href="/#cform">Who we are</a>
+                <a href="/blog">Blog</a>
             </li>
         </> //color#202447
     

@@ -60,8 +60,7 @@ const MyOrder = () => {
           console.log(data);
           if (data.deletedCount) {
             toast.success('Delete Successfully!')
-            window.location.reload();
-          }
+o          }
           else {
             toast.error('failed to delete!')
           }

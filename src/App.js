@@ -15,7 +15,10 @@ import MakeAdmin from "./PAGES/DASHBOARD/ADMIN/MakeAdmin";
 import RequireAdmin from "./PAGES/AUTH/RequireAdmin";
 import NotFoundPage from "./PAGES/SHARED/NotFoundPage";
 import MyPortfolio from "./PAGES/MyPortfolio";
+import Blog from "./PAGES/Blog";
 import AddProduct from "./PAGES/DASHBOARD/ADMIN/AddProduct";
+import ManageProduct from "./PAGES/DASHBOARD/ADMIN/ManageProduct";
+import ManageOrder from "./PAGES/DASHBOARD/ADMIN/ManageOrder";
 import Payment from "./PAGES/DASHBOARD/ADMIN/Payment/Payment";
 
 function App() {
@@ -30,15 +33,18 @@ function App() {
         <Route path="/signup" element={<SignUp />}></Route>
         <Route path="/profile" element={<MyProfile />}></Route>
         <Route path="/portfolio" element={<MyPortfolio />}></Route>
+        <Route path="/blog" element={<Blog/>}></Route>
         <Route path="*" element={<NotFoundPage/>}></Route>
                  {/* Nested Route */}
-        <Route path="/dashboard" element={<Dashboard />}>
+        <Route path="/dashboard" element={<Dashboard/>}>
         <Route index element={<MyProfile />}></Route>
         <Route path="order" element={<RequireAuth><MyOrder/></RequireAuth>}></Route>
         <Route path="review" element={<RequireAuth><AddReview /></RequireAuth>}></Route>
         <Route path="payment/:id" element={<Payment />}></Route>
         <Route path="users" element={<RequireAdmin><MakeAdmin/></RequireAdmin>}></Route>
         <Route path="add-product" element={<RequireAdmin><AddProduct/></RequireAdmin>}></Route>
+        <Route path="manage-product" element={<RequireAdmin><ManageProduct/></RequireAdmin>}></Route>
+        <Route path="manage-all-order" element={<RequireAdmin><ManageOrder/></RequireAdmin>}></Route>
          </Route>
       </Routes>
       <ToastContainer></ToastContainer> 

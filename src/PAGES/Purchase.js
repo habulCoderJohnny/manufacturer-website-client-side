@@ -32,7 +32,7 @@ const Purchase = () => {
             name: order.name,
             quantity,
             price: order.price*quantity,
-            customerMail: user.email,
+            customerMail: user?.email,
             customer: user?.displayName,
             phone,
             address
